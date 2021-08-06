@@ -13,9 +13,12 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	while (is_whitespace(*nptr))
 		nptr++;
-	if (*nptr == '-')
-		sign *= (-1);
-	nptr++;
+	if (*nptr == '-' || *nptr == '+')
+	{
+		if (*nptr == '-')
+			sign *= (-1);
+		nptr++;
+	}
 	while (*nptr >= '0' && *nptr <= '9')
 	{
 		res = (res * 10) + (*nptr - '0');

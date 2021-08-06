@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 static int	in_set(char c, char *set)
 {
@@ -20,11 +21,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	while (in_set((char) s1[start], (char *) set))
+	while (in_set((char) s1[start], (char *) set)
+		&& start <= (int) ft_strlen(s1))
 		start++;
-	while (in_set((char) s1[end], (char *) set))
+	while (in_set((char) s1[end], (char *) set)
+		&& end >= start)
 		end--;
 	newstr = malloc(end - start + 2);
+	if (! newstr)
+		return (NULL);
 	i = 0;
 	while (start <= end)
 		newstr[i++] = s1[start++];

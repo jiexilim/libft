@@ -3,14 +3,17 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
 	size_t	i;
+	char	*dup;
 
 	if (*needle == '\0')
 		return ((char *) haystack);
 	i = 0;
-	while (haystack[i] && i < size)
+	dup = malloc(size * sizeof(char));
+	ft_strlcpy(dup, haystack, size);
+	while (dup[i] && i < size)
 	{
-		if ((haystack[i] == needle[0])
-			&& !ft_strncmp(&haystack[i], needle, ft_strlen(needle) - 1))
+		if ((dup[i] == needle[0])
+			&& !ft_strncmp(&dup[i], needle, ft_strlen(needle)))
 			return ((char *) &haystack[i]);
 		i++;
 	}

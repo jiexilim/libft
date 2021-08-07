@@ -9,7 +9,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 		return ((char *) haystack);
 	i = 0;
 	dup = malloc(size * sizeof(char));
-	ft_strlcpy(dup, haystack, size);
+	ft_strlcpy(dup, haystack, size + 1);
 	while (dup[i] && i < size)
 	{
 		if ((dup[i] == needle[0])

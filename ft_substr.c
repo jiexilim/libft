@@ -13,7 +13,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	// if (start >= ft_strlen(s))
 	// 	return (newsub);
 	if (!newsub)
-		return (NULL);
+		return (newsub);
 	i = 0;
 	while (s[start] && i < len)
 		newsub[i++] = s[start++];

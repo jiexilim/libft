@@ -7,9 +7,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	else if (start > ft_strlen(s))
 		return ("");
-	newsub = (char *) malloc(sizeof(*s) * (len + 1));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	newsub = (char *) malloc(sizeof(*s) * (len - start + 1));
 	if (!newsub)
 		return (NULL);
 	i = 0;

@@ -3,7 +3,6 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
 	size_t	i;
-	char	*dup;
 	
 	if (!*needle)
 		return ((char *) haystack);

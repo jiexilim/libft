@@ -5,7 +5,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 	size_t	i;
 	char	*dup;
 
-	if (*needle == '\0')
+	if (!needle || !haystack)
 		return ((char *) haystack);
 	i = 0;
 	dup = malloc(size * sizeof(char));

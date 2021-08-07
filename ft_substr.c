@@ -7,8 +7,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	else if (start > ft_strlen(s))
-		return ("");
+	else if (start >= ft_strlen(s))
+		return ("\0");
 	if (len > ft_strlen(s))
 		len = ft_strlen(s);
 	newsub = (char *) malloc(sizeof(*s) * (len - start + 1));

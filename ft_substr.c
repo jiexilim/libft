@@ -10,6 +10,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s))
 		return ("");
 	newsub = malloc(len + 1);
+	if (!newsub)
+		return (NULL);
 	i = 0;
 	while (s[start] && i < len)
 		newsub[i++] = s[start++];

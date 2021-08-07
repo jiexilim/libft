@@ -1,25 +1,46 @@
 #include "libft.h"
 // #include <stdio.h>
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*newsub;
-	size_t	i;
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	char	*newsub;
+// 	size_t	i;
 
-	// if (!s)
-	// 	return (NULL);
-	// if (len > ft_strlen(s))
-	// 	len = ft_strlen(s);
-	newsub = (char *) malloc(sizeof(*s) * (len + 1));
-	// if (start >= ft_strlen(s))
-	// 	return (newsub);
-	if (!newsub)
-		return (newsub);
+// 	newsub = (char *) malloc(sizeof(*s) * (len + 1));
+// 	if (!newsub)
+// 		return (newsub);
+// 	i = 0;
+// 	while (s[start] && i < len)
+// 		newsub[i++] = s[start++];
+// 	newsub[i] = 0;
+// 	return (newsub);
+// }
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*temp;
+	int		i;
+
 	i = 0;
-	while (s[start] && i < len)
-		newsub[i++] = s[start++];
-	newsub[i] = 0;
-	return (newsub);
+	if (s == NULL)
+		return (NULL);
+	if ((size_t)start > len)
+	{
+		if ((temp = malloc(1)) == NULL)
+			return (NULL);
+		temp[0] = '\0';
+		return (temp);
+	}
+	if ((temp = ft_calloc((len + 1), sizeof(char))) == NULL)
+		return (NULL);
+	while (start < (unsigned int)len)
+	{
+		temp[i] = s[start];
+		i++;
+		start++;
+	}
+	return (temp);
 }
+
 
 // int main()
 // {

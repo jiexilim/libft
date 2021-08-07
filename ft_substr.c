@@ -5,8 +5,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*newsub;
 	size_t	i;
 
-	if (start >= ft_strlen(s) || !s)
+	if (!s)
 		return (NULL);
+	if (start >= ft_strlen(s))
+		return ("");
 	newsub = malloc(len + 1);
 	i = 0;
 	while (s[start] && i < len)

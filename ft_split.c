@@ -45,5 +45,6 @@ char	**ft_split(char const *s, char c)
 			arr[arr_i][i++] = s[start++];
 		arr[arr_i++][i] = '\0';
 	}
+	arr[arr_i] = NULL;
 	return (arr);
 }

@@ -6,6 +6,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*newstr;
 
 	newstr = malloc(ft_strlen(s) + 1);
+	if (!newstr)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

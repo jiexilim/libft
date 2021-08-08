@@ -4,7 +4,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newsub;
 	size_t	i;
-	if ((size_t) start > len)
+	if ((size_t) start > len || start > ft_strlen(s))
 	{
 		newsub = malloc(1);
 		newsub[0] = '\0';
@@ -24,11 +24,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 
 // int main()
-// {
-// // 	printf("%d\n", strcmp(ft_substr("tripouille", 1, 1), "r"));
-// 	printf("%s\n",ft_substr("tripouille", 100, 1));
-// 	// printf("%s\n", ft_substr("1", 42, 42000000));
-// 	// printf("%s\n", ft_substr("0123456789", 9, 10));
-// 	// printf("%s\n", ft_substr("42", 0, 0));
-// }
+{
+// 	printf("%d\n", strcmp(ft_substr("tripouille", 1, 1), "r"));
+	// char *str = strdup("1");
+	// printf("%s\n",ft_substr(str, 42, 4200000));
+	
+	// printf("%s\n", ft_substr("1", 42, 42000000));
+	// printf("%s\n", ft_substr("0123456789", 9, 10));
+	// printf("%s\n", ft_substr("42", 0, 0));
+}
 

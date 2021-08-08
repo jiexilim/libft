@@ -36,7 +36,7 @@ char	**ft_split(char const *s, char c)
 			start++;
 		if (start >= ft_strlen(s) && !arr)
 		{
-			arr[0] = NULL;
+			arr = NULL;
 			return (arr);
 		}
 		end = start;

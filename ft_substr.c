@@ -10,7 +10,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		newsub[0] = '\0';
 		return (newsub);
 	}
-	newsub = (char*) malloc(sizeof(*s) * (len + 1));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	newsub = (char*) malloc(sizeof(*s) * (len - start + 1));
 	if (!newsub)
 		return (newsub);
 	i = 0;

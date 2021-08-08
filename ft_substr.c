@@ -32,5 +32,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	// printf("%s\n", ft_substr("1", 42, 42000000));
 	// printf("%s\n", ft_substr("0123456789", 9, 10));
 	// printf("%s\n", ft_substr("42", 0, 0));
-}
+// }
 

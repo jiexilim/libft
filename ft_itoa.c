@@ -20,6 +20,12 @@ static size_t	arr_size(int n)
 	return (size);
 }
 
+char	*arr_app_null(char *arr, int i)
+{
+	arr[i] = '\0'
+	return (arr);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*arr;
@@ -30,8 +36,7 @@ char	*ft_itoa(int n)
 	{
 		arr = malloc(2);
 		arr[0] = '0';
-		arr[1] = '\0';
-		return (arr);
+		return (arr_app_null(arr, 1));
 	}
 	size = arr_size(n);
 	arr = malloc(size + 1);
@@ -47,6 +52,5 @@ char	*ft_itoa(int n)
 		arr[i--] = (n % 10) + 48;
 		n /= 10;
 	}
-	arr[size] = '\0';
-	return (arr);
+	return (arr_app_null(arr, size));
 }

@@ -33,7 +33,11 @@ char	**ft_split(char const *s, char c)
 	int		arr_i;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	arr = (char **) malloc(sizeof(char *) * wrd_cnt((char *) s, c) + 1);
+	// if (!arr)
+	// 	return (NULL);
 	start = 0;
 	arr_i = 0;
 	while (s[start])

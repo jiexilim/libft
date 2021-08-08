@@ -29,7 +29,8 @@ char	*ft_itoa(int n)
 	if (n == 0)
 	{
 		arr = malloc(2);
-		arr = "0\0";
+		arr[0] = '0';
+		arr[1] = '\0';
 		return (arr);
 	}
 	size = arr_size(n);

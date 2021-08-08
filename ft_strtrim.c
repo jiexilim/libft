@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	while (in_set((char) s1[start], (char *) set)

@@ -34,9 +34,9 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[start] && s[start] == c)
 			start++;
-		if (start >= ft_strlen(s))
+		if (start >= ft_strlen(s) && !arr)
 		{
-			// arr[0] = NULL;
+			arr[0] = NULL;
 			return (arr);
 		}
 		end = start;

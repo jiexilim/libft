@@ -6,7 +6,9 @@ static size_t	arr_size(int n)
 
 	size = 0;
 	if (n == -2147483648)
-		return (11);
+		return (12);
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{	
 		size = 1;
@@ -32,14 +34,12 @@ char	*ft_itoa(int n)
 	size_t	size;
 	int		i;
 
-	if (n == 0)
-	{
-		arr = malloc(2);
-		arr[0] = '0';
-		return (arr_app_null(arr, 1));
-	}
 	size = arr_size(n);
 	arr = malloc(size + 1);
+	if (!arr)
+		return (NULL);
+	if (n == 0)
+		arr[0] = '0';
 	i = size - 1;
 	if (n < 0)
 	{

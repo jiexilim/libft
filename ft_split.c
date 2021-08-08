@@ -1,5 +1,5 @@
 #include "libft.h"
-#include <stdio.h>
+
 static size_t	wrd_cnt(char *str, char c)
 {
 	size_t	count;
@@ -58,14 +58,3 @@ char	**ft_split(char const *s, char c)
 	arr[arr_i] = NULL;
 	return (arr);
 }
-
-// int main()
-// {
-// 	char **res = ft_split("hahaha", 'a');
-// 	int i = 0;
-// 	while(res[i])
-// 	{
-// 		printf("%s\n", res[i]);
-// 		i++;
-// 	}
-// }

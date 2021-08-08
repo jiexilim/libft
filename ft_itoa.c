@@ -52,5 +52,5 @@ char	*ft_itoa(int n)
 		arr[i--] = (n % 10) + 48;
 		n /= 10;
 	}
-	return (arr_app_null(arr, size));
+	return (arr_app_null(arr, size + 1));
 }

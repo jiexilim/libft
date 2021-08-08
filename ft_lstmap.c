@@ -8,7 +8,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!f || !del)
 		return (NULL);
 	head = NULL;
-	printf("haha");
 	while (lst)
 	{
 		new_ele = ft_lstnew(f(lst->content));

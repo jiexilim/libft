@@ -4,16 +4,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newsub;
 	size_t	i;
-	if ((size_t)start > len)
-	{
-		if ((newsub = malloc(1)) == NULL)
-			return (NULL);
-		newsub[0] = '\0';
-		return (newsub);
-	}
-
 	newsub = (char*) malloc(sizeof(*s) * (len + 1));
-	if (!newsub)
+	if (!newsub || (size_t)start > len)
 		return (newsub);
 	i = 0;
 	while (s[start] && i < len)

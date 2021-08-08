@@ -1,12 +1,12 @@
 #include "libft.h"
-
+// #include <stdio.h>
 static size_t	arr_size(int n)
 {
 	size_t	size;
 
 	size = 0;
 	if (n == -2147483648)
-		return (12);
+		return (11);
 	if (n == 0)
 		return (1);
 	if (n < 0)
@@ -52,5 +52,11 @@ char	*ft_itoa(int n)
 		arr[i--] = (n % 10) + 48;
 		n /= 10;
 	}
-	return (arr_app_null(arr, size + 1));
+	return (arr_app_null(arr, size));
 }
+
+
+// int main()
+// {
+// 	printf("%s\n", ft_itoa(-2147483647));
+// }

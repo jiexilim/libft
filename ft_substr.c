@@ -1,5 +1,5 @@
 #include "libft.h"
-
+// #include <stdio.h>
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newsub;
@@ -13,9 +13,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		newsub[0] = '\0';
 		return (newsub);
 	}
-	if (len > s_len)
+	else if (len > s_len)
+	{
 		len = s_len;
-	newsub = malloc(len - start + 1);
+		newsub = malloc(len - start + 1);
+	}
+	else
+		newsub = malloc(len + 1);
+	printf("%ld\n", len - start + 1);
 	if (!newsub)
 		return (newsub);
 	i = 0;
@@ -24,3 +29,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	newsub[i] = '\0';
 	return (newsub);
 }
+
+
+// int main()
+// {
+// 	char *str = "i just want this part #############";
+// 	size_t size = 10;
+// 	int ret_size;
+
+// 	printf("%s\n", ft_substr(str, 5, size));
+// }

@@ -27,7 +27,11 @@ char	*ft_itoa(int n)
 	int		i;
 
 	if (n == 0)
-		return ("0\0");
+	{
+		arr = malloc(2);
+		arr = "0\0";
+		return (arr);
+	}
 	size = arr_size(n);
 	arr = malloc(size + 1);
 	i = size - 1;

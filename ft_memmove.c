@@ -1,23 +1,28 @@
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*dest_ptr;
-	char		*temp;
+	char		*src_ptr;
 	size_t		i;
 
 	if (!dest && !src)
 		return (NULL);
 	dest_ptr = (char *) dest;
-	temp = malloc(n * sizeof(char));
-	ft_memcpy(temp, src, n);
-	i = 0;
-	while (i < n)
+	src_ptr = (char *) src;
+	if (dest_ptr > src_ptr)
 	{
-		dest_ptr[i] = temp[i];
-		i++;
+		while (n--)
+			dest_ptr[len] = src_ptr[len];
 	}
-	free(temp);
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			dest_ptr[i] = src_ptr[i];
+			i++;
+		}
+	}
 	return (dest);
 }

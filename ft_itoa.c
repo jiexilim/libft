@@ -1,5 +1,5 @@
 #include "libft.h"
-// #include <stdio.h>
+
 static size_t	arr_size(int n)
 {
 	size_t	size;
@@ -54,9 +54,3 @@ char	*ft_itoa(int n)
 	}
 	return (arr_app_null(arr, size));
 }
-
-
-// int main()
-// {
-// 	printf("%s\n", ft_itoa(-2147483647));
-// }

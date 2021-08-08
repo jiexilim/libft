@@ -1,5 +1,5 @@
 #include "libft.h"
-
+// #include <stdio.h>
 static size_t	wrd_cnt(char *str, char c)
 {
 	size_t	count;
@@ -35,7 +35,10 @@ char	**ft_split(char const *s, char c)
 		while (s[start] && s[start] == c)
 			start++;
 		if (start >= ft_strlen(s))
+		{
+			arr[0] = NULL;
 			return (arr);
+		}
 		end = start;
 		while (s[end] && s[end] != c)
 			end++;
@@ -48,3 +51,9 @@ char	**ft_split(char const *s, char c)
 	arr[arr_i] = NULL;
 	return (arr);
 }
+
+// int main()
+// {
+// 	char **tab = ft_split("    ", ' ');
+// 	// printf("%d\n", tab[0] == NULL);
+// }

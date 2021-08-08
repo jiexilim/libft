@@ -5,6 +5,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*join;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!join)
 		return (NULL);

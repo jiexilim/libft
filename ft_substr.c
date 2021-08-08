@@ -1,18 +1,21 @@
 #include "libft.h"
-// #include <stdio.h>
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newsub;
 	size_t	i;
-	if ((size_t) start > len || start > ft_strlen(s))
+	size_t	s_len;
+
+	s_len = ft_strlen(s)
+	if (start > len || start > s_len)
 	{
 		newsub = malloc(1);
 		newsub[0] = '\0';
 		return (newsub);
 	}
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	newsub = (char*) malloc(sizeof(*s) * (len - start + 1));
+	if (len > s_len)
+		len = s_len;
+	newsub = malloc(len - start + 1);
 	if (!newsub)
 		return (newsub);
 	i = 0;
@@ -21,16 +24,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	newsub[i] = '\0';
 	return (newsub);
 }
-
-
-// int main()
-// {
-// 	printf("%d\n", strcmp(ft_substr("tripouille", 1, 1), "r"));
-	// char *str = strdup("1");
-	// printf("%s\n",ft_substr(str, 42, 4200000));
-	
-	// printf("%s\n", ft_substr("1", 42, 42000000));
-	// printf("%s\n", ft_substr("0123456789", 9, 10));
-	// printf("%s\n", ft_substr("42", 0, 0));
-// }
-

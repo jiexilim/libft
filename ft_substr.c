@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 
 // int main()
-{
+// {
 // 	printf("%d\n", strcmp(ft_substr("tripouille", 1, 1), "r"));
 	// char *str = strdup("1");
 	// printf("%s\n",ft_substr(str, 42, 4200000));

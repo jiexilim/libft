@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	else
 		newsub = malloc(len + 1);
-	printf("%ld\n", len - start + 1);
+	// printf("%ld\n", len - start + 1);
 	if (!newsub)
 		return (newsub);
 	i = 0;

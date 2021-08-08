@@ -6,6 +6,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 
 	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!join)
+		return (NULL);
 	i = 0;
 	while (*s1)
 	{
@@ -17,8 +19,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		join[i++] = *s2;
 		s2++;
 	}
-	if (!join)
-		return (NULL);
 	join[i] = '\0';
 	return (join);
 }

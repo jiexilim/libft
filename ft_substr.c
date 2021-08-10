@@ -15,7 +15,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	if (start > len || start > s_len)
+	if (start > s_len)
 	{
 		newsub = malloc(1);
 		return (arr_app_null(newsub, 0));

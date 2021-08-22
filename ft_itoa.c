@@ -1,12 +1,10 @@
 #include "libft.h"
 
-static size_t	arr_size(int n)
+static size_t	arr_size(long n)
 {
 	size_t	size;
 
 	size = 0;
-	if (n == -2147483648)
-		return (11);
 	if (n == 0)
 		return (1);
 	if (n < 0)
@@ -28,7 +26,7 @@ char	*arr_app_null(char *arr, int i)
 	return (arr);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	char	*arr;
 	size_t	size;
